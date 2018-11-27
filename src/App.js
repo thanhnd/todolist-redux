@@ -1,52 +1,34 @@
 import React, { Component } from 'react';
 import './App.css';
 
-// Components
-import ModalTask from './Components/ModalTask';
-import TaskList from './Components/TaskList';
-import Controls from './Components/Controls';
-import FilterString from './Components/Controls/FilterString';
+
 
 // Data
 import listOfTasks from './Models/TaskModel/TaskModel';
+import Secret from './Components/Secret';
+import Notfound from './Components/Notfound';
+import Main from './Components/Main';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="container-fluid">
-          <div className="row">
-            {/* PANEL */}
-            <Controls />
+    render() {
+        let mainComponent = ""
+        switch (this.props.location) {
+            case "":
+                mainComponent = <Main />
+                break
+            case "secret":
+                mainComponent = <Secret />
+                break
+            default:
+                mainComponent = <Notfound />
+        }
+        return (
 
-            {/* DISPLAY */}
-            <div className="col-md-9 px-0">
-              <div className="container-fluid px-0">
-                <div className="row header header--right d-flex align-items-center mx-0">
-                  <div className="col-md-6">
-                    <div className=" d-flex justify-content-between">
-                      <h3 className="text-left ml-2 ">Danh sách công việc</h3>
-                    </div>
-                  </div>
-                  
-                  {/* FilterString */}
-                  <FilterString />
-                  
-                </div>
-              </div>
-              
-              <TaskList 
-                // tasks={listOfTasks.list}
-              />
+            <div className="App">
+                {mainComponent}
             </div>
-          </div>
-        </div>
-
-        {/* ModalTask */}
-        <ModalTask />
-      </div>
-    );
-  }
+        );
+    }
 }
 
 export default App;
