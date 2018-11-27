@@ -7,6 +7,9 @@ import registerServiceWorker from './registerServiceWorker';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './reducers/index';
+import Auth from './Auth';
+
+const auth = new Auth()
 
 const store = createStore(
     rootReducer,
@@ -27,7 +30,8 @@ window.setState = (initialState) => {
 
 let initialState = {
     name: "Hackagon",
-    location: window.location.pathname.replace(/^\/?/g, "")
+    location: window.location.pathname.replace(/^\/?/g, ""),
+    auth
 }
 
 window.setState(initialState)

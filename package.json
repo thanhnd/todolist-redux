@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "auth0-js": "^9.8.2",
     "random-id": "0.0.2",
     "react": "^16.4.1",
     "react-checkbox-group": "^4.0.1",

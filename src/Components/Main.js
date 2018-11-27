@@ -4,7 +4,9 @@ class Main extends Component {
     render() {
         return (
             <div>
-                <h1>Hello world</h1>
+                <h1>Hello {this.props.name}</h1>
+                <button className="btn btn-primary"
+                    onClick={this.props.auth.login}>Login</button>
             </div>
         );
     }
