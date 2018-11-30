@@ -3,6 +3,7 @@ import randomID from 'random-id';
 import { Checkbox, CheckboxGroup } from 'react-checkbox-group';
 import { connect } from 'react-redux';
 import * as actions from '../actions/index';
+import { Link } from 'react-router-dom'
 
 class ModalTask extends Component {
     constructor(props) {
@@ -146,13 +147,13 @@ class ModalTask extends Component {
                         {isAddNewTask ? "Thêm Task" : "Sửa Task"}
                     </button>
 
-                    <button
-                        type="button"
+                    <Link
+                        to="/secret"
                         className="btn btn-danger ml-2"
                         data-dismiss="modal"
                     >
-                        Đóng
-                            </button>
+                        Quay Lại
+                            </Link>
                 </div>
             </form>
 
