@@ -15,11 +15,11 @@ class Routes extends Component {
                 <Route
                     path="/"
                     exact
-                    render={() => <Main />} />
+                    render={() => <Main {...this.props} />} />
                 <Route
                     path="/secret"
                     exact
-                    render={() => this.props.auth.isAuthenticated() ? <Secret /> : <Notfound />} />
+                    render={() => this.props.auth.isAuthenticated() ? <Secret {...this.props} /> : <Notfound />} />
                 <Route
                     path="/callback"
                     exact
