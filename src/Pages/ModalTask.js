@@ -50,15 +50,22 @@ class ModalTask extends Component {
         })
     }
 
-    componentWillReceiveProps = (nextProps) => {
-        let { taskEditing } = nextProps
-        if (nextProps.isAddNewTask) {
-            this.onReset()
-        } else if (taskEditing) {
-            this.setState(taskEditing)
+    componentDidMount() {
+        
+        if(this.props.match) {
+            let {match, tasks} = this.props
+            console.log("match.params.id", match.params.id)
+            if(match.params.id) {
+                for(let task of tasks) {
+                    if(task.id === match.params.id) {
+                        this.props.convertAddToEdit()
+                        this.setState(task)
+                    }
+                }
+            }
         }
-    }
-
+    };
+    
     render() {
         let { isAddNewTask } = this.props
         return (
@@ -164,10 +171,11 @@ class ModalTask extends Component {
     }
 }
 
-const mapPropsToDispatch = (state) => {
+const mapPropsToState = (state) => {
     return {
         isAddNewTask: state.isAddNewTask,
-        taskEditing: state.taskEditing
+        taskEditing: state.taskEditing,
+        tasks: state.tasks
     }
 }
 
@@ -179,8 +187,11 @@ const mapDispatchToProps = (dispatch) => {
         },
         editTask: (task) => {
             dispatch(actions.editTask(task))
+        },
+        convertAddToEdit: () => {
+            dispatch(actions.convertAddToEdit())
         }
     }
 }
 
-export default connect(mapPropsToDispatch, mapDispatchToProps)(ModalTask);
+export default connect(mapPropsToState, mapDispatchToProps)(ModalTask);

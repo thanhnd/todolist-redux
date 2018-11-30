@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import * as action from '../../actions/index'
+import { Link } from 'react-router-dom'
 
 // import Data
 import listOfUsers from '../../Models/UserModel/UserModel'
@@ -107,13 +108,11 @@ class TaskItem extends Component {
                     {elmImg}
                 </td>
                 <td className="text-center">
-                    <button
-                        type="button"
+                    <Link
+                        to={`/edit-task/${task.id}`}
                         className="btn btn-outline-danger"
-                        data-toggle="modal"
-                        data-target="#modalTask"
                         onClick={this.handleEdit}
-                    >Sửa</button>
+                    >Sửa</Link>
 
                     <div className="form-group d-inline ml-2">
                         <select

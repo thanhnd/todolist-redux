@@ -29,9 +29,9 @@ class Routes extends Component {
                     exact
                     render={() => <ModalTask />} />
                 <Route
-                    path="/edit-task/:i"
+                    path="/edit-task/:id"
                     exact
-                    render={() => <ModalTask />} />
+                    render={({match}) => <ModalTask match={match}/>} />
                 <Route
                     render={() => <Notfound />} />
             </Switch>
