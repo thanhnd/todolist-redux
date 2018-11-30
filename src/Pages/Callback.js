@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-
+import Auth from "../Auth"
 class Callback extends Component {
 
     componentDidMount() {
-        this.props.auth.handleAuthentication()
+        const auth = new Auth()
+        auth.handleAuthentication()
     }
 
     render() {

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 // Components
 import ModalTask from './ModalTask';
-import TaskList from './TaskList';
-import Controls from './Controls';
-import FilterString from './Controls/FilterString';
+import TaskList from '../Components/TaskList';
+import Controls from '../Components/Controls';
+import FilterString from '../Components/Controls/FilterString';
 
 class Secret extends Component {
     render() {
@@ -37,9 +37,6 @@ class Secret extends Component {
                         </div>
                     </div>
                 </div>
-
-                {/* ModalTask */}
-                <ModalTask />
             </div>
         );
     }
