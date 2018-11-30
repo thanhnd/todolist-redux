@@ -53,8 +53,8 @@ export default class Auth {
           localStorage.removeItem('accesToken')
           localStorage.removeItem('id_token')
           localStorage.removeItem('expires_at')
-          window.location.pathname = ""
-
+        //   window.location.pathname = ""
+        window.history.replace("/")
       }
 
       isAuthenticated() {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 // Components
-import ModalTask from './ModalTask';
 import TaskList from '../Components/TaskList';
 import Controls from '../Components/Controls';
 import FilterString from '../Components/Controls/FilterString';
