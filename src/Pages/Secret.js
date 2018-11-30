@@ -30,9 +30,7 @@ class Secret extends Component {
                                 </div>
                             </div>
 
-                            <TaskList
-                            // tasks={listOfTasks.list}
-                            />
+                            <TaskList />
                         </div>
                     </div>
                 </div>
