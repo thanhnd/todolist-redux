@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import * as actions from '../../actions/index'
+import { Link } from 'react-router-dom'
 
 class AddNewTask extends Component {
     render() {
         return (
-            <button
-                type="button"
+            <Link
+                to="/add-task"
                 className="btn my-1 btn--newTask"
-                data-toggle="modal"
-                data-target="#modalTask"
                 onClick={this.props.convertEditToAdd}
             >
                 <i className="fa fa-pencil-square-o" />
                 Tạo Task mới
-            </button>
+            </Link>
         );
     }
 }
