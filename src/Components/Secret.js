@@ -13,7 +13,7 @@ class Secret extends Component {
                 <div className="container-fluid">
                     <div className="row">
                         {/* PANEL */}
-                        <Controls />
+                        <Controls {...this.props}/>
 
                         {/* DISPLAY */}
                         <div className="col-md-9 px-0">

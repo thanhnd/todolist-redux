@@ -28,8 +28,11 @@ window.setState = (initialState) => {
         , document.getElementById('root'));
 }
 
+console.log(auth.getProfile())
+let name = auth.getProfile().given_name || auth.getProfile().nickname || "World"
+
 let initialState = {
-    name: "Hackagon",
+    name,
     location: window.location.pathname.replace(/^\/?/g, ""),
     auth
 }
